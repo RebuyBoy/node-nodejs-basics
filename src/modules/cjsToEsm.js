@@ -1,7 +1,13 @@
+
+// You should refactor file (you can add additional imports if needed)
+// cjsToEsm.js - rewrite it to it's equivalent in ECMAScript notation (and switch extension to .mjs)
+import { fileURLToPath } from 'url'
+import { dirname } from 'path'
 const path = require('path');
 const { release, version } = require('os');
 const { createServer: createServerHttp } = require('http');
 require('./files/c');
+const __filename = fileURLToPath(import.meta.url)
 
 const random = Math.random();
 

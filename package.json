@@ -11,7 +11,8 @@
     "fslist": "node src/fs/list.js",
     "fsread": "node src/fs/read.js",
     "fsrename": "node src/fs/rename.js",
-    "clienv": "node src/cli/env.js"
+    "clienv": "node src/cli/env.js",
+    "hash": "node src/hash/calcHash.js"
   },
   "repository": {
     "type": "git",
