@@ -10,7 +10,8 @@
     "fsdelete": "node src/fs/delete.js",
     "fslist": "node src/fs/list.js",
     "fsread": "node src/fs/read.js",
-    "fsrename": "node src/fs/rename.js"
+    "fsrename": "node src/fs/rename.js",
+    "clienv": "node src/cli/env.js"
   },
   "repository": {
     "type": "git",
