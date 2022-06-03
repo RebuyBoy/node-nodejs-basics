@@ -14,7 +14,10 @@
     "clienv": "node src/cli/env.js",
     "hash": "node src/hash/calcHash.js",
     "zip/compress": "node src/zip/compress.js",
-    "zip/decompress": "node src/zip/decompress.js"
+    "zip/decompress": "node src/zip/decompress.js",
+    "streams/read": "node src/streams/read.js",
+    "streams/write": "node src/streams/write.js",
+    "streams/transform": "node src/streams/transform.js"
   },
   "repository": {
     "type": "git",
