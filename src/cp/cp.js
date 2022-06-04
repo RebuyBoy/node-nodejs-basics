@@ -9,4 +9,6 @@ const scriptPath = join(__dirname, "files", "script.js");
 export const spawnChildProcess = async (args) => {
   fork(scriptPath, args);
 };
-spawnChildProcess(["aa", "bb", "cc", "dd"]);
+
+const args = ["aa", "bb", "cc", "dd"];
+spawnChildProcess(args);
