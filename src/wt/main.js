@@ -3,6 +3,7 @@ import {cpus} from "os"
 import {fileURLToPath} from "url"
 import {dirname, join} from "path"
 
+console.time();
 export const performCalculations = async () => {
   const cpusNumber = cpus().length;
   const __filename = fileURLToPath(import.meta.url);
@@ -11,13 +12,12 @@ export const performCalculations = async () => {
   const results = [];
 
   for (let i = 0; i < cpusNumber; i++) {
-    const result = startWorker(filePath, i + 10);
-    results.push(result);
+    results.push(startWorker(filePath, i + 10));
   }
   return await Promise.all(results);
 };
 
- async function startWorker(filePath, number) {
+function startWorker(filePath, number) {
   return new Promise((resolve) => {
     const worker = new Worker(filePath);
     let result = null;
@@ -26,7 +26,6 @@ export const performCalculations = async () => {
         "status": "resolve",
         "data": result
       };
-      worker.terminate();
       resolve(result);
     });
 
@@ -41,4 +40,6 @@ export const performCalculations = async () => {
     worker.postMessage({"number": number})
   });
 }
+
 console.log(await performCalculations());
+console.timeEnd()

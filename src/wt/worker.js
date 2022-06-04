@@ -4,8 +4,8 @@ export const nthFibonacci = (n) => n < 2 ? n : nthFibonacci(n - 1) + nthFibonacc
 
 export const sendResult = () => {
   parentPort.on("message", (message) => {
-    const result = nthFibonacci(message.number);
-    parentPort.postMessage(result);
+    parentPort.postMessage(nthFibonacci(message.number));
+    process.exit();
   });
 };
 sendResult();
