@@ -3,7 +3,6 @@ import {cpus} from "os"
 import {fileURLToPath} from "url"
 import {dirname, join} from "path"
 
-console.time();
 export const performCalculations = async () => {
   const cpusNumber = cpus().length;
   const __filename = fileURLToPath(import.meta.url);
@@ -42,4 +41,3 @@ function startWorker(filePath, number) {
 }
 
 console.log(await performCalculations());
-console.timeEnd()
