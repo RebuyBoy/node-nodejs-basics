@@ -7,7 +7,11 @@ const __dirname = dirname(__filename);
 const scriptPath = join(__dirname, "files", "script.js");
 
 export const spawnChildProcess = async (args) => {
-  fork(scriptPath, args);
+  const cp = fork(scriptPath, args);
+
+  cp.on("close", (code) => {
+    console.log("child_process exited with code " + code);
+  });
 };
 
 const args = ["aa", "bb", "cc", "dd"];
