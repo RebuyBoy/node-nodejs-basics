@@ -29,8 +29,7 @@ console.log(`Path to current directory is ${__dirname}`);
 const createMyServer = createServerHttp((_, res) => {
   res.end('Request accepted');
 });
-createMyServer.listen(8000);
-console.log("server started on localhost:8000");
+
 export {
   unknownObject, createMyServer
 };
